@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'A': [1, 2, 3],
+    'B': ['a', 'b', 'c'],
+    'C': [True, False, True]
+}
+
+df = pd.DataFrame(data)
+
+# Concatenate columns into a tuple
+df_tuple = df.apply(lambda row: (row['A'], row['B'], row['C']), axis=1)
+df_tuple.coloumns = ["tuple"]
+
+print(df_tuple)
